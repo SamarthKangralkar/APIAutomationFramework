@@ -30,11 +30,18 @@ public class BaseTest {
         requestSpecification.baseUri(APIConstants.BASE_URL);
         requestSpecification.contentType(ContentType.JSON);
         requestSpecification.log().all();
+    }
+@BeforeTest
+    public void create_token(){
+    requestSpecification = RestAssured.given();
+    requestSpecification.baseUri(APIConstants.BASE_URL);
+        requestSpecification.basePath(APIConstants.AUTH_URL);
+        requestSpecification.contentType(ContentType.JSON);
 
-
-
+        requestSpecification.log().all();
 
     }
+
 
 
 }

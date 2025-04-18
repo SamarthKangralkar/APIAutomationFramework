@@ -26,10 +26,9 @@ public class Create_booking extends BaseTest {
        validatableResponse = response.then().log().all();
        validatableResponse.statusCode(200);
 
-        BookingResponse bookingResponse= payloadmanager.desirilization(response.asString());
-
+       BookingResponse bookingResponse= payloadmanager.desirilization(response.asString());
         assertAction.Verify_Stringkey(bookingResponse.getBooking().getFirstname(),"Samarth");
-
-
     }
+
+
 }
